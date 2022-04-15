@@ -1,13 +1,11 @@
 {
-  "name": "deploy-your-pull-requests-to-aws-using-github-actions-and-aws-cdk",
+  "name": "preview",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Julien Goux",
   "license": "MIT",
   "private": true,
-  "engines": {
-    "node": ">=14 <15"
-  },
+  "engines": {},
   "scripts": {
     "bootstrap": "CDK_NEW_BOOTSTRAP=1 cdk bootstrap --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess",
     "deploy": "cdk deploy \"AwesomeStack-${STAGE}\" --require-approval never --outputs-file cdk.out.json",
@@ -25,5 +23,6 @@
     "aws-cdk": "1.93.0",
     "ts-node": "9.1.1",
     "typescript": "4.2.3"
-  }
+  },
+  "repository": "https://github.com/QuestAccepted/preview-environments-per-pull-request-using-aws-cdk-and-github-actions.git"
 }
