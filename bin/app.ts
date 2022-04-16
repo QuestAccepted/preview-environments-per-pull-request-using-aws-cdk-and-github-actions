@@ -12,4 +12,4 @@ const app = new cdk.App();
  */
 const stackName = 'AwesomeStack-' + process.env.STAGE;
 
-new AwesomeStack(app, stackName);
+new AwesomeStack(app, stackName, { env: { region: 'us-east-1' } });
