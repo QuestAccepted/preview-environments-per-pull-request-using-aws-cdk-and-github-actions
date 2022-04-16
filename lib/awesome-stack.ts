@@ -37,12 +37,7 @@ export default class AwesomeStack extends cdk.Stack {
       resources: ['arn:aws:secretsmanager:us-east-1:780892829273:secret:github/preview-RDCV5i'],
     });
 
-    // 👇 add the policy to the Function's role
-    edgeAuth.role?.attachInlinePolicy(
-      new iam.Policy(this, 'get-secrets', {
-        statements: [getSecretsPolicy],
-      }),
-    );
+    edgeAuth.addToRolePolicy(getSecretsPolicy);
 
     /**
      * The CloudFront distribution caching and proxying our requests to our bucket
