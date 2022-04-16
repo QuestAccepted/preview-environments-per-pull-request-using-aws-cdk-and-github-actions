@@ -24,12 +24,10 @@ exports.handler = async (event, context, callback) => {
 
     const headers = request.headers
 
-    const user = 'my-username'
-    console.log('User:', user);
-    const { password } = await getSecrets(secretKey);
+    const { username, password } = await getSecrets(secretKey);
 
 
-    const authString = 'Basic ' + Buffer.from(user + ':' + password).toString('base64')
+    const authString = 'Basic ' + Buffer.from(username + ':' + password).toString('base64')
 
 
 
